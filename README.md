@@ -86,6 +86,4 @@ Sequential execution time: 15.62 seconds
 > *Optimizing performance through parallelism — one loop at a time.*
 ```
 
----
 
-You can place this file as `README.md` in the root of your project folder. Let me know if you want me to include performance graphs or visual illustrations!
