@@ -1,8 +1,3 @@
-Here's a clean and informative `README.md` tailored for your OpenMP matrix multiplication project:
-
----
-
-```markdown
 # 🔢 Parallel Matrix Multiplication with OpenMP
 
 This C++ project demonstrates different approaches to matrix multiplication using **OpenMP** for parallel computing. It compares the performance of sequential and parallel implementations across various loop configurations.
