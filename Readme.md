@@ -1,6 +1,4 @@
-Here's a well-formatted README.md file based on your content:
 
-```markdown
 # Matrix Multiply Service (ROS 2 Jazzy)
 
 ![ROS 2](https://img.shields.io/badge/ROS%202-Jazzy-blue)
@@ -94,21 +92,3 @@ matrix_multiply_service/
 | Compilation errors | Verify `libomp-dev` is installed and ROS 2 dependencies are met |
 | Long execution time | Check OpenMP support (`g++ --version`) and adjust thread count |
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Contact
-
-For issues or contributions, please open an issue or pull request on the [GitHub repository](https://github.com/your-username/matrix_multiply_service).
-```
-
-This README includes:
-1. Clear badges for quick identification of key features
-2. Well-organized sections with consistent formatting
-3. Code blocks for commands
-4. A project structure tree diagram
-5. A troubleshooting table for common issues
-6. Proper markdown formatting for readability on GitHub
-
-You should replace `your-username` in the GitHub URLs with your actual username or organization name. You may also want to add actual performance metrics specific to your implementation if available.
