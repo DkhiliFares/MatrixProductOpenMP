@@ -1,72 +1,114 @@
-Matrix Multiply Service (ROS 2 Jazzy)
-This is a ROS 2 package that implements a matrix multiplication service using OpenMP for parallel computation. The service takes two matrices as input, performs their multiplication, and returns the result. It is designed to work with ROS 2 Jazzy and supports matrices of arbitrary sizes (e.g., 100x100).
-Features
+Here's a well-formatted README.md file based on your content:
 
-Custom ROS 2 service for matrix multiplication.
-Parallelized computation using OpenMP for improved performance.
-Supports arbitrary matrix sizes with dimension validation.
-Example client for testing with 100x100 matrices.
+```markdown
+# Matrix Multiply Service (ROS 2 Jazzy)
 
-Prerequisites
+![ROS 2](https://img.shields.io/badge/ROS%202-Jazzy-blue)
+![License](https://img.shields.io/badge/License-MIT-green)
+![OpenMP](https://img.shields.io/badge/Parallel-OpenMP-orange)
 
-ROS 2 Jazzy installed on Ubuntu 24.04 (or compatible).
-OpenMP library (libomp-dev).
-CMake and a C++ compiler (e.g., g++ or clang).
-A configured ROS 2 workspace (e.g., ~/ros2_ws).
+A ROS 2 package that implements a matrix multiplication service using OpenMP for parallel computation. The service takes two matrices as input, performs their multiplication, and returns the result. Designed for ROS 2 Jazzy, it supports matrices of arbitrary sizes (e.g., 100x100).
 
-Install dependencies:
+## Features
+
+- Custom ROS 2 service for matrix multiplication
+- Parallelized computation using OpenMP for improved performance
+- Supports arbitrary matrix sizes with dimension validation
+- Example client for testing with 100x100 matrices
+
+## Prerequisites
+
+- ROS 2 Jazzy installed on Ubuntu 24.04 (or compatible)
+- OpenMP library (`libomp-dev`)
+- CMake and a C++ compiler (g++ or clang)
+- Configured ROS 2 workspace (e.g., `~/ros2_ws`)
+
+### Install dependencies:
+```bash
 sudo apt install libomp-dev
+```
 
-Installation
+## Installation
 
-Clone the repository into your ROS 2 workspace:
+1. Clone the repository into your ROS 2 workspace:
+```bash
 cd ~/ros2_ws/src
 git clone https://github.com/your-username/matrix_multiply_service.git
+```
+(Replace `your-username` with your GitHub username)
 
-Replace your-username with your GitHub username.
-
-Build the package:
+2. Build the package:
+```bash
 cd ~/ros2_ws
 colcon build --packages-select matrix_multiply_service
+```
 
-
-Source the workspace:
+3. Source the workspace:
+```bash
 source ~/ros2_ws/install/setup.bash
+```
 
+## Usage
 
-
-Usage
-
-Launch the matrix multiplication server:
+1. Launch the matrix multiplication server:
+```bash
 ros2 run matrix_multiply_service matrix_multiply_server
+```
 
-
-In a separate terminal, run the client to test with 100x100 matrices:
+2. In a separate terminal, run the client to test with 100x100 matrices:
+```bash
 ros2 run matrix_multiply_service matrix_multiply_client
+```
 
-The client generates two 100x100 matrices with random values, sends them to the server, and prints the result along with the execution time.
+The client will:
+- Generate two 100x100 matrices with random values
+- Send them to the server
+- Print the result along with the execution time
 
+## Project Structure
 
-Project Structure
+```
+matrix_multiply_service/
+├── srv/
+│   └── MatrixMultiply.srv          # Service definition
+├── src/
+│   ├── matrix_multiply_server.cpp  # Server node with OpenMP
+│   └── matrix_multiply_client.cpp  # Test client
+├── CMakeLists.txt                  # Build configuration
+├── package.xml                     # Package metadata
+└── README.md
+```
 
-srv/MatrixMultiply.srv: Service definition for matrix multiplication.
-src/matrix_multiply_server.cpp: Server node implementing the multiplication with OpenMP.
-src/matrix_multiply_client.cpp: Client node for testing with 100x100 matrices.
-CMakeLists.txt and package.xml: Build configuration files.
+## Performance
 
-Performance
+- Uses OpenMP to parallelize matrix multiplication
+- For 100x100 matrices, execution time depends on your CPU:
+  - Typically a few milliseconds to tens of milliseconds with multiple threads
+- To adjust performance: Modify `omp_set_num_threads(n)` in `matrix_multiply_server.cpp`
 
-The service uses OpenMP to parallelize matrix multiplication, improving performance for large matrices.
-For 100x100 matrices, execution time depends on your CPU (typically a few milliseconds to tens of milliseconds with multiple threads).
-To adjust the number of OpenMP threads, modify omp_set_num_threads(n) in matrix_multiply_server.cpp.
+## Troubleshooting
 
-Troubleshooting
+| Issue | Solution |
+|-------|----------|
+| Service not found | Ensure server is running and workspace is sourced |
+| Compilation errors | Verify `libomp-dev` is installed and ROS 2 dependencies are met |
+| Long execution time | Check OpenMP support (`g++ --version`) and adjust thread count |
 
-Service not found: Ensure the server is running and the workspace is sourced.
-Compilation errors: Verify that libomp-dev is installed and ROS 2 dependencies are met.
-Long execution time: Check OpenMP support (g++ --version) and adjust thread count.
+## License
 
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
-Contact
-For issues or contributions, please open an issue or pull request on the GitHub repository.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For issues or contributions, please open an issue or pull request on the [GitHub repository](https://github.com/your-username/matrix_multiply_service).
+```
+
+This README includes:
+1. Clear badges for quick identification of key features
+2. Well-organized sections with consistent formatting
+3. Code blocks for commands
+4. A project structure tree diagram
+5. A troubleshooting table for common issues
+6. Proper markdown formatting for readability on GitHub
+
+You should replace `your-username` in the GitHub URLs with your actual username or organization name. You may also want to add actual performance metrics specific to your implementation if available.
