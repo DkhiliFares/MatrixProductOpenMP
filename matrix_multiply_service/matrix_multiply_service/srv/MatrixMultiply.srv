@@ -1,0 +1,12 @@
+# Entrée : deux matrices représentées sous forme de listes 1D avec leurs dimensions
+float64[] matrix_a  # Matrice A aplatie (row-major)
+int32 rows_a       # Nombre de lignes de A
+int32 cols_a       # Nombre de colonnes de A
+float64[] matrix_b  # Matrice B aplatie (row-major)
+int32 rows_b       # Nombre de lignes de B
+int32 cols_b       # Nombre de colonnes de B
+---
+# Sortie : matrice résultat aplatie
+float64[] result    # Matrice C = A * B aplatie (row-major)
+int32 rows_c       # Nombre de lignes de C
+int32 cols_c       # Nombre de colonnes de C
